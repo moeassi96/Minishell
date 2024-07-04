@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   quotations.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hkanaan <hkanaan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: moassi <moassi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 22:24:31 by moassi            #+#    #+#             */
-/*   Updated: 2024/07/03 12:52:06 by hkanaan          ###   ########.fr       */
+/*   Updated: 2024/07/04 12:08:16 by moassi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,15 +93,13 @@ void	clean_quotations(t_ast_node *head, int i, t_env *my_env)
 			resolve_quotes(&start, head->value[i], &j, my_env);
 		else if (head->value[i][j] == '\'')
 			resolve_literals(&start, head->value[i], &j, my_env);
-		else if (head->value[i][j] == '$')
-		{
-			search_and_add_var(&start, head->value[i], &j, my_env);
-		}
-		else
-		{
-			add_to_str(head->value[i][j], &start);
+		else if (head->value[i][j] == '$' && ((head->value[i][j + 1] == '"')
+				|| (head->value[i][j + 1] == '\'')))
 			j++;
-		}
+		else if (head->value[i][j] == '$')
+			search_and_add_var(&start, head->value[i], &j, my_env);
+		else
+			add_to_str(head->value[i][j++], &start);
 	}
 	(replace_cleaned_str(&start, head, i), free_char_ll(&start));
 }

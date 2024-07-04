@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_echo.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: moassi <moassi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 13:16:56 by moassi            #+#    #+#             */
-/*   Updated: 2024/07/03 22:46:25 by marvin           ###   ########.fr       */
+/*   Updated: 2024/07/04 14:54:40 by moassi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ void	ft_echo(char **input)
 			first_print = 0;
 		}
 		else
-			ft_printf(" %s", input[i]);	
-		i++;		
+			ft_printf(" %s", input[i]);
+		i++;
 	}
 	if (newl == 1)
 		ft_putstr("\n");

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: moassi <moassi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/22 10:45:13 by hkanaan           #+#    #+#             */
-/*   Updated: 2024/07/04 10:16:50 by marvin           ###   ########.fr       */
+/*   Updated: 2024/07/04 14:53:21 by moassi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,12 @@ typedef struct s_ll_node
 	struct s_ll_node	*next;
 }	t_ll_node;
 
+typedef struct s_env_node
+{
+	char				*str;
+	struct s_env_node	*next;
+}	t_env_node;
+
 int			count_tokens(char *s, int *i);
 t_node		*tokenize_input_mem(char *input);
 
@@ -136,7 +142,7 @@ void		ft_echo(char **input);
 void		ft_free_env(t_env **myenv);
 t_env		*init_env(char **env);
 int			ft_env(char **input, t_env *my_env);
-int		ft_exit(char **input, t_env *my_env);
+int			ft_exit(char **input, t_env *my_env);
 int			ft_export(char **input, t_env *myenv);
 int			ft_pwd(void);
 int			ft_unset(char **input, t_env *myenv);
@@ -166,5 +172,7 @@ void		do_command_helper(t_execution_organiser *org, int *new_fd,
 void		do_command_helper_2(char **cmd, t_env *my_env);
 int			is_builtin_command_fork(char **cmd);
 int			check_var_validity(char *var, char *value);
+void		sort_print_env(t_env *myenv);
+int			var_exists(char	*str, t_env *myenv);
 
 #endif
