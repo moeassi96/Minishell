@@ -6,7 +6,7 @@
 /*   By: moassi <moassi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 15:53:47 by moassi            #+#    #+#             */
-/*   Updated: 2024/07/04 14:51:13 by moassi           ###   ########.fr       */
+/*   Updated: 2024/07/02 13:19:34 by moassi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,7 @@ int	ft_env(char **input, t_env *my_env)
 	i = 0;
 	while (my_env->env[i])
 	{
-		if (ft_strchr(my_env->env[i], '='))
-			ft_putendl_fd(my_env->env[i], 1);
+		ft_putendl_fd(my_env->env[i], 1);
 		i++;
 	}
 	exit(0);

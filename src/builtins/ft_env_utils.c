@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_env_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moassi <moassi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 20:10:56 by moassi            #+#    #+#             */
-/*   Updated: 2024/07/04 14:53:54 by moassi           ###   ########.fr       */
+/*   Updated: 2024/07/03 23:42:22 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,8 @@ void	update_env_level(t_env *myenv)
 {
 	char	*prev_level;
 	int		temp;
-	int		i;
 
-	i = 0;
+	int i = 0;
 	while (myenv->env[i])
 	{
 		if (!ft_strncmp(myenv->env[i], "SHLVL=", 6))

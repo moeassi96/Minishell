@@ -6,7 +6,7 @@
 /*   By: moassi <moassi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 22:24:31 by moassi            #+#    #+#             */
-/*   Updated: 2024/07/04 12:08:16 by moassi           ###   ########.fr       */
+/*   Updated: 2024/07/05 11:00:40 by moassi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,7 +115,7 @@ void	traverse_and_clean_tree(t_ast_node *head, t_env *my_env)
 		traverse_and_clean_tree(head->left, my_env);
 	if (head->right)
 		traverse_and_clean_tree(head->right, my_env);
-	if (head->file_type != DONE)
+	if (head->file_type != DONE && head->file_type != IN_APPEND)
 	{
 		i = 0;
 		while (head->value[i])

@@ -6,7 +6,7 @@
 /*   By: moassi <moassi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/22 10:45:13 by hkanaan           #+#    #+#             */
-/*   Updated: 2024/07/04 14:53:21 by moassi           ###   ########.fr       */
+/*   Updated: 2024/07/05 11:02:37 by moassi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,7 +142,7 @@ void		ft_echo(char **input);
 void		ft_free_env(t_env **myenv);
 t_env		*init_env(char **env);
 int			ft_env(char **input, t_env *my_env);
-int			ft_exit(char **input, t_env *my_env);
+int		ft_exit(char **input, t_env *my_env);
 int			ft_export(char **input, t_env *myenv);
 int			ft_pwd(void);
 int			ft_unset(char **input, t_env *myenv);
@@ -172,6 +172,11 @@ void		do_command_helper(t_execution_organiser *org, int *new_fd,
 void		do_command_helper_2(char **cmd, t_env *my_env);
 int			is_builtin_command_fork(char **cmd);
 int			check_var_validity(char *var, char *value);
+
+char		*remove_qoutes_str(char *str, int single_qoute_count,
+				int double_qoute_count, int i);
+void		get_var_heredoc(char *str, t_env *myenv, int *j, int out_f);
+int			get_var_start_heredoc(char *str, int *j, int out_f);
 void		sort_print_env(t_env *myenv);
 int			var_exists(char	*str, t_env *myenv);
 

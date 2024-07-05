@@ -5,12 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: moassi <moassi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/04 12:59:34 by moassi            #+#    #+#             */
-/*   Updated: 2024/07/04 14:47:11 by moassi           ###   ########.fr       */
+/*   Created: 2024/07/05 10:55:25 by moassi            #+#    #+#             */
+/*   Updated: 2024/07/05 10:56:41 by moassi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
+
+static void	free_ll(t_env_node **lst)
+{
+	if ((*lst)->next)
+		free_ll(&((*lst)->next));
+	free((*lst)->str);
+	free(*lst);
+}
 
 static void	add_to_ll(t_env *myenv, t_env_node **env)
 {
@@ -98,6 +106,9 @@ void	sort_print_env(t_env *myenv)
 		if (strchr(cur->str, '='))
 			ft_printf("\"%s\"", val);
 		ft_printf("\n");
+		free(var);
+		free(val);
 		cur = cur->next;
 	}
+	free_ll(&env);
 }
