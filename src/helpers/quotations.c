@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   quotations.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moassi <moassi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hkanaan <hkanaan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 22:24:31 by moassi            #+#    #+#             */
-/*   Updated: 2024/07/05 11:00:40 by moassi           ###   ########.fr       */
+/*   Updated: 2024/07/05 12:14:01 by hkanaan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	resolve_quotes(t_ll_node **lst, char *str, int *j, t_env *myenv)
 			(*j)++;
 		}
 	}
+	(*j)++;
 }
 
 void	resolve_literals(t_ll_node **lst, char *str, int *j, t_env *myenv)
@@ -40,6 +41,7 @@ void	resolve_literals(t_ll_node **lst, char *str, int *j, t_env *myenv)
 		add_to_str(str[*j], lst);
 		(*j)++;
 	}
+	(*j)++;
 }
 
 /*

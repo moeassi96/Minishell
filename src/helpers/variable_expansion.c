@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   variable_expansion.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moassi <moassi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hkanaan <hkanaan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 14:24:29 by moassi            #+#    #+#             */
-/*   Updated: 2024/07/05 11:05:17 by moassi           ###   ########.fr       */
+/*   Updated: 2024/07/05 13:35:14 by hkanaan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ void	search_and_add_var(t_ll_node **lst, char *str, int *j, t_env *myenv)
 	{
 		while (str[*j + i] && str[*j + i] != '$'
 			&& str[*j + i] != '\'' && str[*j + i] != '"'
-			&& str[*j + i] != ' ')
+			&& str[*j + i] != ' ' && str[*j + i] != ']')
 			i++;
 	}
 	to_find = ft_substr(str, *j, i);

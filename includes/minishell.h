@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moassi <moassi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/22 10:45:13 by hkanaan           #+#    #+#             */
-/*   Updated: 2024/07/05 11:02:37 by moassi           ###   ########.fr       */
+/*   Updated: 2024/07/07 21:23:23 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,15 +136,15 @@ int			here_doc(char *delim, t_execution_organiser *org, t_env *my_env);
 int			do_builtin_cmd(char **input, t_env *myenv);
 int			ft_cd(char **input, t_env *my_env);
 int 		cd_back(t_env *myenv);
-void		cd_error_display(char *dir);
-void		update_current_pwd(t_env *myenv);
+void	cd_error_display(char *dir);
+void		update_current_pwd(t_env *myenv, int add_dots);
 void		ft_echo(char **input);
 void		ft_free_env(t_env **myenv);
 t_env		*init_env(char **env);
 int			ft_env(char **input, t_env *my_env);
-int		ft_exit(char **input, t_env *my_env);
+int			ft_exit(char **input, t_env *my_env);
 int			ft_export(char **input, t_env *myenv);
-int			ft_pwd(void);
+int			ft_pwd(t_env *env);
 int			ft_unset(char **input, t_env *myenv);
 
 int			start_builtin_execution_simple(char **cmd,
